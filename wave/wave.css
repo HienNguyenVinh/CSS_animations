@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+body {
+    background: rgb(18, 2, 2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .content {
+    position: absolute;
+} */
+.content h2 {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    font-size: 5rem;
+}
+.content h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(227, 87, 87);;
+}
+.content h2:nth-child(2) {
+    color: rgb(227, 87, 87);
+    animation: wave 6s ease-in-out infinite;
+}
+@keyframes wave {
+    0%,100% {
+        clip-path: polygon(0% 100%, 0% 61%, 14% 54%, 24% 50%, 35% 48%, 45% 51%, 55% 58%, 67% 63%, 79% 61%, 88% 57%, 99% 52%, 99% 99%);
+    }
+    50% {
+        clip-path: polygon(0% 100%, 0% 43%, 12% 50%, 23% 55%, 35% 54%, 46% 50%, 62% 44%, 74% 42%, 82% 45%, 92% 50%, 99% 55%, 100% 100%);
+
+    }
+}

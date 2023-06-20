@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #000;
+    overflow: hidden;
+    height: 100vh;
+}
+.rain i {
+    position: absolute;
+    height: 150px;
+    background: linear-gradient(transparent, #fff);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    animation: fall 2s linear infinite;
+}
+.rain i:nth-child(4n) {
+    background: linear-gradient(transparent, rgb(235, 110, 110));
+}
+.rain i:nth-child(4n+1) {
+    background: linear-gradient(transparent, rgb(166, 249, 143));
+}
+.rain i:nth-child(4n+2) {
+    background: linear-gradient(transparent, rgb(252, 254, 152));
+}
+.rain i:nth-child(4n+3) {
+    background: linear-gradient(transparent, rgb(152, 251, 254));
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-150px);
+    }
+    100% {
+        transform: translateY(calc(100vh + 150px));
+    }
+}

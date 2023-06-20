@@ -1,0 +1,92 @@
+:root {
+    --clr-gr:#db0000;
+}
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Amatic SC', cursive;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #050505;
+}
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: revolution 8s linear infinite;
+}
+@keyframes revolution {
+    0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(-30deg) rotateY(-360deg);
+    }
+}
+.cube div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+}
+.cube div span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#151515, var(--clr-gr));
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+.cube div span h2 {
+    position: absolute;
+    color: #fff;
+    font-size: 10rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    transform: translateZ(50px);
+}
+.cube div span h2:nth-child(1) {
+    transform: translateZ(0);
+    color: rgba(0,0,0,0.1);
+    filter: blur(3px);
+}
+.cube div::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #0f0f0f;
+    transform: rotateX(90deg) translateZ(150px);
+}
+.cube div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    width: 300px;
+    height: 300px;
+    background: var(--clr-gr);
+    transform: rotateX(90deg) translateZ(-300px);
+    filter: blur(20px);
+    box-shadow: 0 0 100px rgba(0, 255, 0, 0.2),
+    0 0 150px rgba(255, 0, 0, 0.4),
+    0 0 200px rgba(255, 0, 0, 0.6),
+    0 0 250px rgba(255, 0, 0, 0.8),
+    0 0 300px rgba(255, 0, 0, 1);
+}
